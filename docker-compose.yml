@@ -1,0 +1,13 @@
+version: "3"
+services:
+  front:
+    image: node:7-slim
+    working_dir: "/var/www/app"
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - "80:3000"
+    volumes:
+      - ./app:/var/www/app
+    command: bash -c "npm install && npm run dev"
+
